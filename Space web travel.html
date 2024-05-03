@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/css.css">
+    <title>Space web travel</title>
+</head>
+<body>
+    <div class="level" id="level1" style="display: flex;"> <!--Общий контейнер для первого уровня-->
+        <div class="task"> 
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <input id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 1</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Добро пожаловать в Flexbox Froggy. Игра, в которой тебе нужно помочь лягушонку Фроги и его друзьям, написав CSS код! Направь этого лягушонка на лилию справа, используя свойство justify-content, которое выравнивает элементы горизонтально и принимает следующие значения:
+
+                    flex-start: элементы выравниваются по левой стороне контейнера.
+                    flex-end: элементы выравниваются по правой стороне контейнера.
+                    center: элементы выравниваются по центру контейнера.
+                    space-between: элементы отображаются с одинаковыми отступами между ними.
+                    space-around: элементы отображаются с одинаковыми отступами вокруг них.
+                    Например, justify-content: flex-end; сдвинет лягушонка вправо.</p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                <textarea name="code">
+                </textarea>
+            </div>
+        </div>
+        <div class="result"></div> <!--div для отражения результата-->
+    </div>
+    <div class="level" id="level2"> <!--Общий контейнер для второго уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 2</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Используй justify-content ещё раз, чтобы помочь этим лягушатам попасть на их лилии. Помни, что это свойство CSS выравнивает элементы горизонтально и принимает следующие значения:
+
+                    flex-start: элементы выравниваются по левой стороне контейнера.
+                    flex-end: элементы выравниваются по правой стороне контейнера.
+                    center: элементы выравниваются по центру контейнера.
+                    space-between: элементы отображаются с одинаковыми отступами между ними.
+                    space-around: элементы отображаются с одинаковыми отступами вокруг них.</p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                <textarea name="code">
+                </textarea>
+            </div>
+        </div>
+        <div class="result"></div> <!--div для отражения результата-->
+    </div>
+    <div class="level" id="level3"> <!--Общий контейнер для третьего уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 3</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Помоги всем трём лягушатам найти их лилии, просто используя justify-content. В этот раз у лилий много пространства вокруг.
+
+                    Если ты чувствуешь, что забыл возможные значения свойства, ты можешь навести курсор на название свойства, чтобы посмотреть их. Попробуй навести курсор на justify-content.</p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                <textarea name="code">
+                </textarea>
+            </div>
+        </div>
+        <div class="result"></div> <!--div для отражения результата-->
+    </div>
+    <a href="SecondPlanet.html" class="linkBtn" style="display: none;">Переход по ссылке</a>
+</body>
+<script>
+    function clickNext(){
+        let level1 = document.getElementById('level1');
+        let level2 = document.getElementById('level2');
+        let level3 = document.getElementById('level3');
+
+        console.log(level1.style.display)
+
+        if (level1.style.display == "flex"){
+            level1.style.display = "none";
+            level2.style.display = "flex";
+            
+        }
+        else if(level2.style.display == "flex"){
+            level2.style.display = "none";
+            level3.style.display = "flex";
+            document.querySelector(".linkBtn").style.display = "inline-block";
+        }
+    }
+    function clickBack(){
+        let level1 = document.getElementById('level1');
+        let level2 = document.getElementById('level2');
+        let level3 = document.getElementById('level3');
+
+        if (level2.style.display == "flex"){
+            level2.style.display = "none";
+            level1.style.display = "flex"
+            console.log('uuuf')
+        }
+        else if(level3.style.display == "flex"){
+            level3.style.display = "none";
+            level2.style.display = "flex";
+            console.log('uuuf2')
+        }
+    }
+</script>
+</html>

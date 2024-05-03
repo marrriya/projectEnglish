@@ -1,0 +1,90 @@
+body{
+    background-color: rgb(227 233 255);
+    font-family: 'PT Sans', sans-serif;
+    margin: 20px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    margin-left: 20px;
+}
+#level1{
+    display: flex;
+}
+#level2{
+    display: none;
+}
+#level3{
+    display: none;
+}
+.linkBtn{
+    background: #0ead00;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 15px;
+    position: fixed;
+    right: 0;
+    margin-right: 40px;
+}
+p{
+    text-align: justify;
+    margin: 0px 10px;
+}
+p.desc{
+    text-align: justify;
+    margin: 0px;
+}
+.level{
+    display: flex;
+}
+.result{
+    width: 50%;
+    background-color: rgb(4 18 70);
+    border-radius: 20px;
+    margin: 20px;
+    min-height: 300px;
+}
+.task{
+    width: 45%;
+    margin: 0px 20px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+div.navigate{
+    display: flex;
+    align-items: center;
+}
+textarea {
+    resize: none;
+    background: #ffffff;
+    border: 2px solid rgb(4 18 70);
+    padding: 20px;
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin: 50px 0px 20px;
+    border-radius: 20px;
+}
+#right{
+    background: rgb(227 233 255) url(../pic/button_right.png) no-repeat padding-box;
+    height: 24px;
+    width: 24px;
+    border: none;
+}
+#left{
+    background: rgb(227 233 255) url(../pic/button_left.png) no-repeat padding-box;
+    height: 24px;
+    width: 24px;
+    border: none;
+}
+button:hover{
+    cursor: pointer;
+}
