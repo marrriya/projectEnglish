@@ -1,3 +1,28 @@
+.house{
+    width: 150px;
+    height: 150px;
+    right: 0;
+    position: absolute;
+    margin: 20px 60px;
+}
+.forNlo{
+    height: 100%;
+    width: 45%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    margin: 55px 60px;
+    /* justify-content: flex-end; */
+}
+.nlo{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body{
     background-color: rgb(227 233 255);
     font-family: 'PT Sans', sans-serif;
