@@ -1,3 +1,37 @@
+dialog{
+    height: 95%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 95%;
+    border: none;
+    background-color: rgb(227 233 255); 
+}
+.forPicture{
+    height: 75%;
+}
+.btnForward{
+    margin: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 10px;
+}
+#hide{
+    background: #0ead00;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 15px;
+    border: none;
+    width: 150px;
+}
+.house{
+    width: 150px;
+    height: 150px;
+    right: 0;
+    position: absolute;
+    margin: 20px 60px;
+}
 .house{
     width: 150px;
     height: 150px;
