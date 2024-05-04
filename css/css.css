@@ -133,13 +133,13 @@ textarea {
     border-radius: 20px;
 }
 #right{
-    background: rgb(227 233 255) url(./pic/button_right.png) no-repeat padding-box;
+    background: rgb(227 233 255) url(../pic/button_right.png) no-repeat padding-box;
     height: 24px;
     width: 24px;
     border: none;
 }
 #left{
-    background: rgb(227 233 255) url(./pic/button_left.png) no-repeat padding-box;
+    background: rgb(227 233 255) url(../pic/button_left.png) no-repeat padding-box;
     height: 24px;
     width: 24px;
     border: none;
