@@ -172,7 +172,8 @@
         const userInput = textarea.value;
         outputDiv.style.cssText = userInput;
 
-        if (userInput == "justify-content: flex-end;"){
+        const regex = new RegExp('justify-content: flex-end;*');
+        if (regex.test(userInput)){
             nextLevelButton.style.display = 'block';
         } else {
             nextLevelButton.style.display = 'none';
