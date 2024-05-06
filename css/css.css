@@ -147,3 +147,13 @@ textarea {
 button:hover{
     cursor: pointer;
 }
+
+#nextLevelButton {
+    display: none;
+}
+#nextLevelButton2 {
+    display: none;
+}
+#nextLevelButton3 {
+    display: none;
+}
