@@ -49,21 +49,23 @@
                     Например, justify-content: flex-end; сдвинет лягушонка вправо.</p>
             </div>
             <div class="placeTo"> <!--Место для кода-->
-                <textarea name="code">
-                </textarea>
+                <textarea name="code" id="userInput"></textarea>
+                <button id="nextLevelButton" type="button">Дальше</button>
             </div>
         </div>
         <div class="result">
             <div class="house" id="house">
                 <img src="./pic/lilypad-green-color-assist.svg" class="lily" style="width: 150px; height: 150px;">
             </div>
-            <div class="forNlo">
+            <div class="forNlo" id="forNlo">
                 <div class="nlo">
                     <img src="./pic/red_first_planet.png" style="width: 120px; height: 120px">
                 </div>
             </div>
         </div> <!--div для отражения результата-->
+        
     </div>
+
     <div class="level" id="level2"> <!--Общий контейнер для второго уровня-->
         <div class="task"> <!--div для описания задания и input-->
             <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
@@ -84,8 +86,8 @@
                     space-around: элементы отображаются с одинаковыми отступами вокруг них.</p>
             </div>
             <div class="placeTo"> <!--Место для кода-->
-                <textarea name="code">
-                </textarea>
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton2" type="button">Дальше</button>
             </div>
         </div>
         <div class="result"></div> <!--div для отражения результата-->
@@ -106,14 +108,16 @@
                     Если ты чувствуешь, что забыл возможные значения свойства, ты можешь навести курсор на название свойства, чтобы посмотреть их. Попробуй навести курсор на justify-content.</p>
             </div>
             <div class="placeTo"> <!--Место для кода-->
-                <textarea name="code">
-                </textarea>
+                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" type="button">Дальше</button>
             </div>
         </div>
         <div class="result"></div> <!--div для отражения результата-->
     </div>
     <a href="SecondPlanet.html" class="linkBtn" style="display: none;">Переход по ссылке</a>
 </body>
+
 <script>
     function clickNext(){
         let level1 = document.getElementById('level1');
@@ -154,6 +158,62 @@
             document.getElementById('hide').onclick = function() { dialog.close(); 
             dialog.style.zIndex = 0;
         }; 
-      })();
+      })();  
+</script>
+
+<script>
+    const textarea = document.getElementById('userInput');
+    const outputDiv = document.getElementById('forNlo');
+
+    const house = document.getElementById('house');
+    const nextLevelButton = document.getElementById('nextLevelButton');
+
+    textarea.addEventListener('input', function() {
+        const userInput = textarea.value;
+        outputDiv.style.cssText = userInput;
+
+        if (userInput == "justify-content: flex-end;"){
+            nextLevelButton.style.display = 'block';
+        } else {
+            nextLevelButton.style.display = 'none';
+        }
+
+        // я пыталась получить координаты пришельца и его домика, но он видит изначальное расположение(((
+        // поэтому не вышло, но код пока оставлю, вдруг придумаю еще что-нибудь
+
+        // const houseRect = house.getBoundingClientRect();
+        // const forNloRect = outputDiv.getBoundingClientRect();
+
+        // if (Math.abs(houseRect.left - forNloRect.left) < 10 && Math.abs(houseRect.top - forNloRect.top) < 10) {
+        //     alert('!!!!!!!!!!!!!!!!!!!!!!');
+        //     nextLevelButton.style.display = 'block';
+        // } else {
+        //     if (userInput = "justify-content: flex-end;"){
+        //         nextLevelButton.style.display = 'block';
+        //         alert('!!!!!!!!!!!!!!!!!!!!!!');
+        //     }
+        //     nextLevelButton.style.display = 'none';
+        //     alert(houseRect.left - forNloRect.left);
+        // }
+    });
+
+    nextLevelButton.addEventListener('click', function() {
+        let level1 = document.getElementById('level1');
+        let level2 = document.getElementById('level2');
+        let level3 = document.getElementById('level3');
+
+        console.log(level1.style.display)
+
+        if (level1.style.display == "flex"){
+            level1.style.display = "none";
+            level2.style.display = "flex";
+            
+        }
+        else if(level2.style.display == "flex"){
+            level2.style.display = "none";
+            level3.style.display = "flex";
+            document.querySelector(".linkBtn").style.display = "inline-block";
+        }
+    });
 </script>
 </html>
