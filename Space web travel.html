@@ -8,27 +8,46 @@
 </head>
 <body>
     <dialog id="intro" open>
-        <div class="forPicture">
-            <h1>1 Это первая планета</h1>
+        <div class="play phone" style="display: flex;">
+            <h1 style="z-index: 1; padding: 78px;">SPACE WEB TRAVEL</h1>
+            <button id="playBtn" onclick="Play()">Play</button>
+            <div class="planets"></div>
+            <div class="raketa"></div>
+            <!-- <div class="hero"></div> -->
         </div>
-        <div class="text">
-            <p>
-                FLEXBOX FROGGY
-                Добро пожаловать в Flexbox Froggy. Игра, в которой тебе нужно помочь лягушонку Фроги и его друзьям, написав CSS код! Направь этого лягушонка на лилию справа, используя свойство justify-content, которое выравнивает элементы горизонтально и принимает следующие значения:
-
-                flex-start: элементы выравниваются по левой стороне контейнера.
-                flex-end: элементы выравниваются по правой стороне контейнера.
-                center: элементы выравниваются по центру контейнера.
-                space-between: элементы отображаются с одинаковыми отступами между ними.
-                space-around: элементы отображаются с одинаковыми отступами вокруг них.
-                Например, justify-content: flex-end; сдвинет лягушонка вправо.
-            </p>
-        </div>
-        <div class="btnForward">
-            <button id="hide">Вперёд!</button>
+        <div class="dialogs phone" style="display: none;">
+            <div class="hero"></div>
+            <div class="inoplanet"></div>
+            <div class="text">
+                <p>
+                    Welcome to the Star Code! Get ready for an exciting journey through the galaxy of knowledge. Together with Mike, you will master the basics of web layout, learn how to create your own web pages and reveal the secrets of CSS Grid and CSS Flex Ready? Then go ahead!
+                </p>
+                <p style="display: none;">
+                    It's been so long since I left my home planet. I've explored so many worlds, but I haven't found my place anywhere.                
+                </p>
+                <p style="display: none;">
+                    Oh my God, what is it? My ship is running out of fuel, just enough to fly to the nearest planet.                
+                </p>
+                <p style="display: none;">
+                    Greetings, wanderer, why did you visit our house?
+                </p>
+                <p style="display: none;">
+                    My ship ran out of fuel, I can't get home, I don't even know where he is. Maybe you can help me.
+                </p>
+                <p style="display: none;">
+                    Of course we can, but our ships are very small compared to yours, we'll have to get all the fuel out of our ships. You're going to help us do this.
+                </p>
+                <p style="display: none;">
+                    On our Flex planet, we can only move around using the display:flex properties. Good luck!
+                </p>
+            </div>
+            <button class="next">Next</button>
+            <!-- <div class="btnForward">
+                <button id="hide">Go!</button>
+            </div> -->
         </div>
     </dialog>
-    <div class="level" id="level1" style="display: flex;"> <!--Общий контейнер для первого уровня-->
+    <div class="level" id="level1" style="display: flex;"> <!--Общий контейнер для 1 уровня-->
         <div class="task"> 
             <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
                 <h1>Space web travel</h1>
@@ -39,34 +58,35 @@
                 </div>
             </div>
             <div > <!--Описание задания-->
-                <p class="desc">Добро пожаловать в Flexbox Froggy. Игра, в которой тебе нужно помочь лягушонку Фроги и его друзьям, написав CSS код! Направь этого лягушонка на лилию справа, используя свойство justify-content, которое выравнивает элементы горизонтально и принимает следующие значения:
-
-                    flex-start: элементы выравниваются по левой стороне контейнера.
-                    flex-end: элементы выравниваются по правой стороне контейнера.
-                    center: элементы выравниваются по центру контейнера.
-                    space-between: элементы отображаются с одинаковыми отступами между ними.
-                    space-around: элементы отображаются с одинаковыми отступами вокруг них.
-                    Например, justify-content: flex-end; сдвинет лягушонка вправо.</p>
-            </div>
+                <p class="desc">Используй свойства display: flex, чтобы помочь инопланетянам добраться до своих кораблей. Свойство justify-content размещает элементы горизонтально и может принимать следующие значения:</p>
+                <ul>
+                    <li>Flex-start – выравнивает все элементы в начале</li> 
+                    <li>Flex-end – выравнивает все элементы в конце контейнера</li> 
+                    <li>Center – выравнивает все элементы по центру</li> 
+                    <li>Space-between – элементы выравниваются с одинаковым расстоянием между ними </li>
+                    <li>Space-around – элементы выравниваются с одинаковым расстоянием вокруг них</li>
+                </ul>
+                </div>
             <div class="placeTo"> <!--Место для кода-->
                 <textarea name="code" id="userInput"></textarea>
-                <button id="nextLevelButton" type="button">Дальше</button>
+                <button id="nextLevelButton" class="nextLevelButton" type="button">Дальше</button>
             </div>
         </div>
-        <div class="result">
-            <div class="house" id="house">
-                <img src="./pic/lilypad-green-color-assist.svg" class="lily" style="width: 150px; height: 150px;">
-            </div>
-            <div class="forNlo" id="forNlo">
-                <div class="nlo">
-                    <img src="./pic/red_first_planet.png" style="width: 120px; height: 120px">
+        <div class="result"> <!--div для отражения результата-->
+                <div id="nlo" style="z-index: 20;">
+                    <div class="red nlo"></div>
+                    <div class="green nlo"></div>
+                    <div class="blue nlo"></div>
                 </div>
-            </div>
-        </div> <!--div для отражения результата-->
+                <div id="houses">
+                    <div class="red house"></div>
+                    <div class="green house"></div>
+                    <div class="blue house"></div>
+                </div>
+        </div> 
         
     </div>
-
-    <div class="level" id="level2"> <!--Общий контейнер для второго уровня-->
+    <div class="level" id="level2" style="display: none;"> <!--Общий контейнер для 2 уровня-->
         <div class="task"> <!--div для описания задания и input-->
             <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
                 <h1>Space web travel</h1>
@@ -77,28 +97,300 @@
                 </div>
             </div>
             <div > <!--Описание задания-->
-                <p class="desc">Используй justify-content ещё раз, чтобы помочь этим лягушатам попасть на их лилии. Помни, что это свойство CSS выравнивает элементы горизонтально и принимает следующие значения:
-
-                    flex-start: элементы выравниваются по левой стороне контейнера.
-                    flex-end: элементы выравниваются по правой стороне контейнера.
-                    center: элементы выравниваются по центру контейнера.
-                    space-between: элементы отображаются с одинаковыми отступами между ними.
-                    space-around: элементы отображаются с одинаковыми отступами вокруг них.</p>
+                <p class="desc">Отлично, теперь надо передвинуть инопланетян не только в горизонтальном, но и в вертикальном направлении. В этом может помочь свойство align-items, которое может принимать следующие значения:</p>
+                <ul>
+                    <li>Flex-start – элементы выравниваются у верхнего края</li>
+                    <li>Flex-end – элементы выравниваются у нижнего края</li> 
+                    <li>Center – элементы выравниваются по центу</li> 
+                    <li>Baseline – элементы выравниваются на базовой линии контейнера</li>
+                    <li>Stretch – элементы растягиваются, чтобы заполнить контейнер</li>
+                </ul>
             </div>
             <div class="placeTo"> <!--Место для кода-->
                 <textarea name="code"></textarea>
-                <button id="nextLevelButton2" type="button">Дальше</button>
+                <button id="nextLevelButton2" class="nextLevelButton" type="button">Дальше</button>
             </div>
         </div>
-        <div class="result"></div> <!--div для отражения результата-->
+        <div class="result">
+            <div id="nlo" style="z-index: 20;">
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+            </div>
+            <div id="houses">
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+            </div>
+        </div> <!--div для отражения результата-->
     </div>
-    <div class="level" id="level3"> <!--Общий контейнер для третьего уровня-->
+    <div class="level" id="level3"> <!--Общий контейнер для 3 уровня-->
         <div class="task"> <!--div для описания задания и input-->
             <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
                 <h1>Space web travel</h1>
                 <div class="navigate">
                     <button id="left" type="button" onclick="clickBack()"></button>
                     <p>Уровень 3</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">А здесь нужно поставить инопланетян в другом порядке. Это можно сделать с помощью свойства flex-direction, оно задаёт главное направление для оси и может принимать следующие значения:</p>
+                <ul>
+                    <li>Row – значение по умолчанию, направление слева направо</li>
+                    <li>Row-reverse – меняет направление на обратное: справа налево</li>
+                    <li>Column - направление сверху вниз </li>
+                    <li>Column-reverse - направление снизу вверх </li>
+                </ul>
+                <p>* свойство flex-direction меняет не элементы, а направление элементов, поэтому при вертикальном направлении горизонтальная и вертикальная ось меняются местами </p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Дальше</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+            </div>
+            <div id="houses">
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level4"> <!--Общий контейнер для 4 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 4</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Теперь инопланетянам нужно встать в несколько рядов. За это отвечает свойство flex-wrap, которое принимает следующие значения: 
+                <ul>    
+                    <li>Nowrap – значение по умолчанию, все элементы выстраиваются в одну линию</li>
+                    <li>Wrap – позволяет элементам переноситься на другие строчки, размещая их в несколько рядов</li>
+                    <li>Wrap-reverse – делает то же, что и wrap, только ряды выстроены в другом порядке</li>
+                </ul>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Дальше</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="red nlo"></div>
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="red nlo"></div>
+                <div class="red nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="red nlo"></div>
+                <div class="red nlo"></div>
+            </div>
+            <div id="houses">
+                <div class="red house"></div>
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="red house"></div>
+                <div class="red house"></div>
+                <div class="blue house"></div>
+                <div class="red house"></div>
+                <div class="red house"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level5"> <!--Общий контейнер для 5 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 5</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Свойства flex-direction и flex-wrap так часто используются вместе, что для них существует отдельно свойство: flex-flow. Оно принимает такие же свойства, как flex-direction и flex-wrap, записанные через пробел. Например: flex-flow: column wrap</p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Дальше</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="red nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+            </div>
+            <div id="houses">
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="red house"></div>
+                <div class="blue house"></div>
+                <div class="blue house"></div>
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level6"> <!--Общий контейнер для 6 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 6</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Кажется, один корабль синего инопланетянина стоит дальше, чем нужно. Чтобы добраться для него нужно применить свойство align-self. Оно принимает такие же значения, как и align-items, но позволяет применить его только к одному элементу </p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Дальше</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="green nlo"></div>
+                <div class="red nlo"></div>
+            </div>
+            <div id="houses">
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+                <div class="green house"></div>
+                <div class="red house"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level7"> <!--Общий контейнер для 7 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 7</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Поздравляю, ты изучил все основные свойства display: flex. Теперь примени эти свойства, чтобы помочь инопланетянам добраться до своих кораблей.</p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Дальше</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="green nlo"></div>
+                <div class="red nlo"></div>
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="green nlo"></div>
+                <div class="red nlo"></div>
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="green nlo"></div>
+                <div class="red nlo"></div>
+            </div>
+            <div id="houses">
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+                <div class="green house"></div>
+                <div class="red house"></div>
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+                <div class="green house"></div>
+                <div class="red house"></div>
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+                <div class="green house"></div>
+                <div class="red house"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level8"> <!--Общий контейнер для 8 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 8</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Теперь примени изученные свойства, чтобы помочь инопланетянам добраться до своих кораблей.</p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Дальше</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="green nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="red nlo"></div>
+            </div>
+            <div id="houses">
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+                <div class="green house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+                <div class="red house"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level9"> <!--Общий контейнер для 9 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Уровень 9</p>
                     <button id="right" type="button" onclick="clickNext()"></button>
                 </div>
             </div>
@@ -110,31 +402,126 @@
             <div class="placeTo"> <!--Место для кода-->
                 
                 <textarea name="code"></textarea>
-                <button id="nextLevelButton3" type="button">Дальше</button>
+                <a href="SecondPlanet.html" id="nextLevelButton9" class="nextLevelButton" type="button">Дальше</a>
             </div>
         </div>
-        <div class="result"></div> <!--div для отражения результата-->
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="red nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="green nlo"></div>
+                <div class="green nlo"></div>
+                <div class="blue nlo"></div>
+                <div class="red nlo"></div>
+            </div>
+            <div id="houses">
+                <div class="red house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+                <div class="green house"></div>
+                <div class="green house"></div>
+                <div class="blue house"></div>
+                <div class="red house"></div>
+            </div>
+        </div> 
     </div>
-    <a href="SecondPlanet.html" class="linkBtn" style="display: none;">Переход по ссылке</a>
+    
+    <!-- <a href="SecondPlanet.html" class="linkBtn" style="display: none;">Вперёд!</a> -->
 </body>
 
 <script>
-    function clickNext(){
-        let level1 = document.getElementById('level1');
-        let level2 = document.getElementById('level2');
-        let level3 = document.getElementById('level3');
+    let allText = document.getElementsByTagName('p');
+    let count = 0;
+    document.querySelector('.next').addEventListener('click', function(){
+        count++;
+        allText[count-1].style.display = 'none';
+        allText[count].style.display = 'block';
+        if(count == 1 || count == 2 || count == 4){
+            console.log(count, typeof(count));
+            document.querySelector('.inoplanet').style.display = 'none';
+            document.querySelector('.hero').style.display = 'block';
+        }else if(count == 7){
+            document.getElementById('intro').style.display = 'none';
+        }else{
+            document.querySelector('.hero').style.display = 'none';
+            document.querySelector('.inoplanet').style.display = 'block';
+        }
+    })
+    function Play(){
+        document.querySelector('.play').style.display = "none";
+        document.querySelector('.dialogs').style.display = "flex";
+    }
 
-        console.log(level1.style.display)
+    let level1 = document.getElementById('level1');
+    let level2 = document.getElementById('level2');
+    let level3 = document.getElementById('level3');
+    let level4 = document.getElementById('level4');
+    let level5 = document.getElementById('level5');
+    let level6 = document.getElementById('level6');
+    let level7 = document.getElementById('level7');
+    let level8 = document.getElementById('level8');
+    let level9 = document.getElementById('level9');
+
+    let allHouses = document.querySelectorAll('#houses')
+
+    function clickNext(){
 
         if (level1.style.display == "flex"){
             level1.style.display = "none";
             level2.style.display = "flex";
-            
+            allHouses[1].style.alignItems = 'flex-end';
+            allHouses[1].style.justifyContent = 'space-around';            
         }
         else if(level2.style.display == "flex"){
             level2.style.display = "none";
             level3.style.display = "flex";
+            allHouses[2].style.alignItems = 'center';
+            allHouses[2].style.flexDirection = 'column-reverse';
+            allHouses[2].style.justifyContent = 'space-around';  
+        }
+        else if(level3.style.display == "flex"){
+            level3.style.display = "none";
+            level4.style.display = "flex";
+            allHouses[3].style.flexWrap = 'wrap-reverse';
+            allHouses[3].style.flexDirection = 'row-reverse';
+
+        }
+        else if(level4.style.display == "flex"){
+            level4.style.display = "none";
+            level5.style.display = "flex";
+            allHouses[4].style.justifyContent = 'space-around';
+            allHouses[4].style.flexFlow = 'column-reverse wrap';
+        }
+        else if(level5.style.display == "flex"){
+            level5.style.display = "none";
+            level6.style.display = "flex";
+            allHouses[5].style.justifyContent = 'space-around';
+            allHouses[5].style.alignItems = 'center';
+            allHouses[5].childNodes[5].style.alignSelf = 'flex-end';
+        }
+        else if(level6.style.display == "flex"){
+            level6.style.display = "none";
+            level7.style.display = "flex";
+            allHouses[6].style.alignContent = 'end';
+            allHouses[6].style.flexDirection = 'row';
+            allHouses[6].style.flexWrap = 'wrap-reverse';
+        }
+        else if(level7.style.display == "flex"){
+            level7.style.display = "none";
+            level8.style.display = "flex";
+            allHouses[7].style.alignContent = 'space-between';
+            allHouses[7].style.flexFlow = 'column-reverse wrap';
+            allHouses[7].style.justifyContent = 'space-between';
+        }
+        else if(level8.style.display == "flex"){
+            level8.style.display = "none";
+            level9.style.display = "flex";
             document.querySelector(".linkBtn").style.display = "inline-block";
+            allHouses[8].style.alignItems = 'center';
+            allHouses[8].style.alignContent = 'flex-end';
+            allHouses[8].style.flexFlow = 'row-reverse wrap';
+            allHouses[8].style.justifyContent = 'flex-end';
         }
     }
     function clickBack(){
@@ -145,20 +532,47 @@
         if (level2.style.display == "flex"){
             level2.style.display = "none";
             level1.style.display = "flex"
-            console.log('uuuf')
         }
         else if(level3.style.display == "flex"){
             level3.style.display = "none";
             level2.style.display = "flex";
-            console.log('uuuf2')
+        }
+        else if(level3.style.display == "flex"){
+            level3.style.display = "none";
+            level2.style.display = "flex";
+        }
+        else if(level4.style.display == "flex"){
+            level4.style.display = "none";
+            level3.style.display = "flex";
+        }
+        else if(level5.style.display == "flex"){
+            level5.style.display = "none";
+            level4.style.display = "flex";
+        }
+        else if(level6.style.display == "flex"){
+            level6.style.display = "none";
+            level5.style.display = "flex";
+        }
+        else if(level7.style.display == "flex"){
+            level7.style.display = "none";
+            level6.style.display = "flex";
+        }
+        else if(level8.style.display == "flex"){
+            level8.style.display = "none";
+            level7.style.display = "flex";
+        }
+        else if(level9.style.display == "flex"){
+            level9.style.display = "none";
+            level8.style.display = "flex";
+            document.querySelector(".linkBtn").style.display = "none";
         }
     }
-    (function() {  
-            let dialog = document.getElementById('intro');  
-            document.getElementById('hide').onclick = function() { dialog.close(); 
-            dialog.style.zIndex = 0;
-        }; 
-      })();  
+    // (function() {  
+    //         let dialog = document.getElementById('intro');  
+    //         document.getElementById('hide').onclick = function() { dialog.close(); 
+    //         dialog.style.zIndex = 0;
+    //     }; 
+    //   })();  
 </script>
 
 <script>
