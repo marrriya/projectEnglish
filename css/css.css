@@ -1,9 +1,98 @@
-dialog{
-    height: 95%;
+.dialogs.phone{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.next{
+    margin: 20px 0px 30px 0px;
+    width: 100px;
+    padding: 5px;
+}
+.text{
+    background-color: rgb(227 233 255);
+    height: 100px;
+    width: 700px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.inoplanet{
+    display: none;
+    position: fixed;
+    left: 75%;
+    bottom: -6%;
+    background-image: url(../pic/red_chel.png);
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 400px;
+    background-size: 100% 100%;
+}
+.hero{
+    display: none;
+    position: fixed;
+    left: 20px;
+    background-image: url(../pic/chubrik.png);
+    background-repeat: no-repeat;
+    height: 450px;
+    width: 350px;
+    background-size: 100% 100%;
+}
+.planets{
+    position: fixed;
+    background-image: url(../pic/planet.png);
+    background-repeat: no-repeat;
+    height: 800px;
+    background-size: 100% 100%;
+    width: 1100px;
+    top: 0;
+    left: 27%;
+}
+.raketa{
+    top: 50%;
+    left: 0%;
     position: absolute;
+    background-image: url(../pic/raketa.png);
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 500px;
+    background-size: 100% 100%;
+}
+.phone{
+    background-image: url(../pic/phone.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: 100% 100%;
+}
+.play{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+    font-size: 40px;
+    font-family: cursive;
+}
+#playBtn{
+    width: 250px;
+    height: 100px;
+    font-size: 40px;
+    border-radius: 20px;
+    background: #0ead00;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+}
+li, p{
+    line-height: 1.5;
+}
+dialog{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    position: fixed;
     top: 0;
     z-index: 1;
-    width: 95%;
+    width: 100%;
     border: none;
     background-color: rgb(227 233 255); 
 }
@@ -25,48 +114,10 @@ dialog{
     border: none;
     width: 150px;
 }
-.house{
-    width: 150px;
-    height: 150px;
-    right: 0;
-    position: absolute;
-    margin: 20px 60px;
-}
-.house{
-    width: 150px;
-    height: 150px;
-    right: 0;
-    position: absolute;
-    margin: 20px 60px;
-}
-.forNlo{
-    height: 100%;
-    width: 45%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: flex;
-    margin: 55px 60px;
-    /* justify-content: flex-end; */
-}
-.nlo{
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 body{
     background-color: rgb(227 233 255);
     font-family: 'PT Sans', sans-serif;
     margin: 20px;
-}
-header{
-    display: flex;
-    justify-content: space-between;
-    width: 45%;
-    margin-left: 20px;
 }
 #level1{
     display: flex;
@@ -77,15 +128,45 @@ header{
 #level3{
     display: none;
 }
-.linkBtn{
+#level4{
+    display: none;
+}
+#level5{
+    display: none;
+}
+#level6{
+    display: none;
+}
+#level7{
+    display: none;
+}
+#level8{
+    display: none;
+}
+#level9{
+    display: none;
+}
+.nextLevelButton{
+    position: relative;
     background: #0ead00;
     color: #fff;
-    padding: 1rem 1.5rem;
+    left: 80%;
+    border-radius: 15px;
+    border: none;
+    width: 20%;
+    height: 40px;
+}
+#nextLevelButton9{
+    font-size: 0.8em;
+    padding: 0.8rem 2.6rem;
+    position: relative;
+    background: #0ead00;
+    color: #fff;
+    left: 80%;
     text-decoration: none;
     border-radius: 15px;
-    position: fixed;
-    right: 0;
-    margin-right: 40px;
+    width: 20%;
+    height: 40px;
 }
 p{
     text-align: justify;
@@ -93,31 +174,30 @@ p{
 }
 p.desc{
     text-align: justify;
-    margin: 0px;
+    margin: 10px;
 }
 .level{
     display: flex;
-}
-.result{
-    width: 50%;
-    background-color: rgb(4 18 70);
-    border-radius: 20px;
-    margin: 20px;
-    min-height: 300px;
-}
-.task{
-    width: 45%;
-    margin: 0px 20px;
 }
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
-div.navigate{
-    display: flex;
-    align-items: center;
+.result{
+    position: sticky;
+    top: 20px;
+    overflow: hidden;
+    width: 50%;
+    background-color: rgb(4 18 70);
+    border-radius: 20px;
+    margin: 20px;
+    height: 600px;
+}
+.task{
+    width: 45%;
+    margin: 0px 20px;
 }
 textarea {
     resize: none;
@@ -125,12 +205,15 @@ textarea {
     border: 2px solid rgb(4 18 70);
     padding: 20px;
     width: 100%;
-    height: 300px;
-    min-height: 300px;
+    min-height: 250px;
     box-sizing: border-box;
     font-size: 14px;
-    margin: 50px 0px 20px;
+    margin: 10px 0px 20px;
     border-radius: 20px;
+}
+div.navigate{
+    display: flex;
+    align-items: center;
 }
 #right{
     background: rgb(227 233 255) url(../pic/button_right.png) no-repeat padding-box;
@@ -148,12 +231,49 @@ button:hover{
     cursor: pointer;
 }
 
-#nextLevelButton {
-    display: none;
+/* первый уровень */
+
+.red.nlo{
+    background-image: url(../pic/red_chel.png);
+    background-repeat: no-repeat;
 }
-#nextLevelButton2 {
-    display: none;
+.green.nlo{
+    background-image: url(../pic/green_chel.png);
+    background-repeat: no-repeat;
 }
-#nextLevelButton3 {
-    display: none;
+.blue.nlo{
+    background-image: url(../pic/blue_chel.png);
+    background-repeat: no-repeat;
+}
+.red.house{
+    background-image: url(../pic/red_house.png);
+    background-repeat: no-repeat;
+}
+.green.house{
+    background-image: url(../pic/green_house.png);
+    background-repeat: no-repeat;
+}
+.blue.house{
+    background-image: url(../pic/blue_house.png);
+    background-repeat: no-repeat;
+}
+#houses{
+    background-color: rgb(4 18 70);
+    border-radius: 20px;
+}
+#nlo, #houses{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 94%;
+    height: 94%;
+    padding: 1em;
+}
+.house, .nlo{
+    position: relative;
+    width: 15%;
+    height: 20%;
+    overflow: hidden;
+    background-size: 100% 100%;
 }
