@@ -260,6 +260,7 @@ button:hover{
 #houses{
     background-color: rgb(4 18 70);
     border-radius: 20px;
+    justify-content: center;
 }
 #nlo, #houses{
     display: flex;
