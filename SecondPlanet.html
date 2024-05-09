@@ -1,20 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -23,130 +7,631 @@
     <title>Space web travel</title>
 </head>
 <body>
-    <dialog id="intro" open>
-        <div class="forPicture">
-            <h1>2 Это вторая планета</h1>
-        </div>
-        <div class="text">
-            <p>
-                FLEXBOX FROGGY
-                Добро пожаловать в Flexbox Froggy. Игра, в которой тебе нужно помочь лягушонку Фроги и его друзьям, написав CSS код! Направь этого лягушонка на лилию справа, используя свойство justify-content, которое выравнивает элементы горизонтально и принимает следующие значения:
-
-                flex-start: элементы выравниваются по левой стороне контейнера.
-                flex-end: элементы выравниваются по правой стороне контейнера.
-                center: элементы выравниваются по центру контейнера.
-                space-between: элементы отображаются с одинаковыми отступами между ними.
-                space-around: элементы отображаются с одинаковыми отступами вокруг них.
-                Например, justify-content: flex-end; сдвинет лягушонка вправо.
-            </p>
-        </div>
-        <div class="btnForward">
-            <button id="hide">Вперёд!</button>
+    <dialog id="intro" close>
+        <div class="dialogs phone" style="display: flex;">
+            <div class="hero"></div>
+            <div class="inoplanet" style="display: block;"></div>
+            <div class="text">
+                <p class="mch">
+                    Hello, wanderer on an outdated form of transport.
+                </p>
+                <p class="mch" style="display: none;">
+                    Why is it outdated. This ship is assembled according to the latest developments of the scientists of my planet.                
+                </p>
+                <p class="mch" style="display: none;">
+                    Pfft, everyone has been traveling through portals for a long time. So, why did you come?                
+                </p>
+                <p class="mch" style="display: none;">
+                    Just behind that. I don't have enough fuel to fly home, could you give me the key to my planet's portal.
+                </p>
+                <p class="mch" style="display: none;">
+                    Help us first. My residents quarreled because they could not divide the territories among themselves, they need to be helped to define the boundaries using the CSS Grid properties. I hope you can handle it.
+                </p>
+                <p class="mch" style="display: none;">
+                    Well, you really did it. Okay, take your key.
+                </p>
+                <p class="mch" style="display: none;">
+                    Thank you, I will finally be able to return home.
+                </p>
+            </div>
+            <button class="next" onclick="dialogs1()">Next</button>
+            <!-- <div class="btnForward">
+                <button id="hide">Go!</button>
+            </div> -->
         </div>
     </dialog>
-    <div class="level" id="level1" style="display: flex;"> <!--Общий контейнер для первого уровня-->
+    <div class="level" id="level1" style="display: flex;"> <!--Общий контейнер для 1 уровня-->
         <div class="task"> 
             <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
                 <h1>Space web travel</h1>
                 <div class="navigate">
                     <input id="left" type="button" onclick="clickBack()"></button>
-                    <p>Уровень 1</p>
+                    <p>Level 1</p>
                     <button id="right" type="button" onclick="clickNext()"></button>
                 </div>
             </div>
             <div > <!--Описание задания-->
-                <p class="desc">Добро пожаловать в Flexbox Froggy. Игра, в которой тебе нужно помочь лягушонку Фроги и его друзьям, написав CSS код! Направь этого лягушонка на лилию справа, используя свойство justify-content, которое выравнивает элементы горизонтально и принимает следующие значения:
-
-                    flex-start: элементы выравниваются по левой стороне контейнера.
-                    flex-end: элементы выравниваются по правой стороне контейнера.
-                    center: элементы выравниваются по центру контейнера.
-                    space-between: элементы отображаются с одинаковыми отступами между ними.
-                    space-around: элементы отображаются с одинаковыми отступами вокруг них.
-                    Например, justify-content: flex-end; сдвинет лягушонка вправо.</p>
+                <p class="desc">Help the aliens occupy the desired territory using the <b>display: grid</b> properties. In front of you is a grid consisting of 5 rows and 5 columns. 
+                    Use the <b>grid-column-start</b> property to specify which column the element should be on.<br>The property takes integers as values: negative or positive.
+                </p>
+                </div>
+            <div class="placeTo"> <!--Место для кода-->
+                <textarea name="code" id="userInput"></textarea>
+                <button id="nextLevelButton" class="nextLevelButton" type="button">Next</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level2" style="display: none;"> <!--Общий контейнер для 2 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Level 2</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">But what about making the element take up more than 1 column? The <b>grid-column-end</b> property will help with this. The property takes the same values as <b>grid-column-start</b> and determines where the element ends.
+                    <br> *instead of numbers, these properties can take the span 3 value, which determines that the element will stretch over 3 columns.</p>
             </div>
             <div class="placeTo"> <!--Место для кода-->
-                <textarea name="code">
-                </textarea>
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton2" class="nextLevelButton" type="button">Next</button>
             </div>
         </div>
         <div class="result">
-            <div class="house" id="house">
-                <img src="./pic/lilypad-green-color-assist.svg" class="lily" style="width: 150px; height: 150px;">
-            </div>
-            <div class="forNlo">
-                <div class="nlo">
-                    <img src="./pic/frog-green-color-assist.svg" style="width: 120px; height: 120px">
-                </div>
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
             </div>
         </div> <!--div для отражения результата-->
     </div>
-    <div class="level" id="level2"> <!--Общий контейнер для второго уровня-->
+    <div class="level" id="level3"> <!--Общий контейнер для 3 уровня-->
         <div class="task"> <!--div для описания задания и input-->
             <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
                 <h1>Space web travel</h1>
                 <div class="navigate">
                     <button id="left" type="button" onclick="clickBack()"></button>
-                    <p>Уровень 2</p>
+                    <p>Level 3</p>
                     <button id="right" type="button" onclick="clickNext()"></button>
                 </div>
             </div>
             <div > <!--Описание задания-->
-                <p class="desc">Используй justify-content ещё раз, чтобы помочь этим лягушатам попасть на их лилии. Помни, что это свойство CSS выравнивает элементы горизонтально и принимает следующие значения:
-
-                    flex-start: элементы выравниваются по левой стороне контейнера.
-                    flex-end: элементы выравниваются по правой стороне контейнера.
-                    center: элементы выравниваются по центру контейнера.
-                    space-between: элементы отображаются с одинаковыми отступами между ними.
-                    space-around: элементы отображаются с одинаковыми отступами вокруг них.</p>
+                <p class="desc">In order not to write these 2 properties every time, there is a <b>grid-column</b> property. It takes the values <b>grid-column-start</b> and <b>grid-column-end</b>, written with a "/". <br>For example: grid-column: 2 / 3;</p>            
             </div>
-            <div class="placeTo"> <!--Место для кода-->
-                <textarea name="code">
-                </textarea>
+            <div class="placeTo"> <!--Место для кода-->                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Next</button>
             </div>
         </div>
-        <div class="result"></div> <!--div для отражения результата-->
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div> 
     </div>
-    <div class="level" id="level3"> <!--Общий контейнер для третьего уровня-->
+    <div class="level" id="level4"> <!--Общий контейнер для 4 уровня-->
         <div class="task"> <!--div для описания задания и input-->
             <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
                 <h1>Space web travel</h1>
                 <div class="navigate">
                     <button id="left" type="button" onclick="clickBack()"></button>
-                    <p>Уровень 3</p>
+                    <p>Level 4</p>
                     <button id="right" type="button" onclick="clickNext()"></button>
                 </div>
             </div>
             <div > <!--Описание задания-->
-                <p class="desc">Помоги всем трём лягушатам найти их лилии, просто используя justify-content. В этот раз у лилий много пространства вокруг.
-
-                    Если ты чувствуешь, что забыл возможные значения свойства, ты можешь навести курсор на название свойства, чтобы посмотреть их. Попробуй навести курсор на justify-content.</p>
+                <p class="desc">And what about the arrangement of the elements line by line?<br>There is a <b>grid-row-start</b> property for this. It also accepts numeric values and determines which row the element will be placed in.</p>
             </div>
             <div class="placeTo"> <!--Место для кода-->
-                <textarea name="code">
-                </textarea>
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Next</button>
             </div>
         </div>
-        <div class="result"></div> <!--div для отражения результата-->
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div> 
     </div>
-    <a href="ThirdPlanet.html" class="linkBtn" style="display: none;">Переход по ссылке</a>
+    <div class="level" id="level5"> <!--Общий контейнер для 5 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Level 5</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Just like <b>grid-column-end</b>, there is a <b>grid-row-end</b> property that determines which row the element ends in.</p>            
+            </div>
+            <div class="placeTo"> <!--Место для кода-->                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Next</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level6"> <!--Общий контейнер для 6 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Level 6</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Now try to combine these 2 properties using <b>grid-row</b>.It works the same way as a <b>grid-column</b>.</p>            
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Next</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level7"> <!--Общий контейнер для 7 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Level 7</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Use a common grid-column and grid-row. Get your <b>grid area</b>. There are 4 values indicating "/" in total: <u>grid-the beginning of a row, grid-the beginning of a column, grid-the end of a row, grid-the end of a row</u>.</p>            
+            </div>
+            <div class="placeTo"> <!--Место для кода-->                
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Next</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level8"> <!--Общий контейнер для 8 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Level 8</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">And what if the specified grid does not fit? You can resize columns using <b>grid-template-columns</b>. Now you need to take up half the width of the container. You can use:</p>
+                <ul>
+                    <li>grid-template-columns: 50% 50%</li>
+                    <li>grid-template-columns 50% 100px</li>
+                    <li>grid-template-columns 50% repeat(3, 50px)</li>
+                    <li>grid-template-columns 50% 3fr 1fr</li>
+                </ul>
+                <p>And so on...</p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                <textarea name="code"></textarea>
+                <button id="nextLevelButton3" class="nextLevelButton" type="button">Next</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level9"> <!--Общий контейнер для 9 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Level 9</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Now it's the same, only with rows, using the grid-template-rows property.The height for these 3 territories should be:</p>
+                <ol>
+                    <li>10px</li>
+                    <li>3em</li>
+                    <li>40%</li>
+                </ol>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="fio pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="blue pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div> 
+    </div>
+    <div class="level" id="level10"> <!--Общий контейнер для 10 уровня-->
+        <div class="task"> <!--div для описания задания и input-->
+            <div class="header"> <!--Шапка: название сайта + навигация по уровням-->
+                <h1>Space web travel</h1>
+                <div class="navigate">
+                    <button id="left" type="button" onclick="clickBack()"></button>
+                    <p>Level 10</p>
+                    <button id="right" type="button" onclick="clickNext()"></button>
+                </div>
+            </div>
+            <div > <!--Описание задания-->
+                <p class="desc">Congratulations! Have you studied the basic properties of <b>display:grid</b>. Now put your knowledge into practice and help the inhabitants of the second planet determine their territories.</p>
+            </div>
+            <div class="placeTo"> <!--Место для кода-->
+                
+                <textarea name="code"></textarea>
+                <button id="nextPlanet" class="nextLevelButton" onclick="dialogs2()">Next</button>
+            </div>
+        </div>
+        <div class="result"> <!--div для отражения результата-->
+            <div id="nlo" style="z-index: 20;">
+                <div class="orange pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="fio pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="blue pattern"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+                <div class="ddd"></div>
+            </div>
+        </div>
+    </div>
 </body>
-<script>
-    function clickNext(){
-        let level1 = document.getElementById('level1');
-        let level2 = document.getElementById('level2');
-        let level3 = document.getElementById('level3');
 
-        console.log(level1.style.display)
+<script>
+    let allText = document.querySelectorAll(".mch" );
+    let count = 0;
+    function dialogs1(){
+        count++;
+        allText[count-1].style.display = 'none';
+        allText[count].style.display = 'block';
+        if(count == 1 || count == 3){
+            console.log(count, typeof(count));
+            document.querySelector('.inoplanet').style.display = 'none';
+            document.querySelector('.hero').style.display = 'block';
+        }else if(count == 5){
+            document.getElementById('intro').style.display = 'none';
+        }else{
+            document.querySelector('.hero').style.display = 'none';
+            document.querySelector('.inoplanet').style.display = 'block';
+        }
+    }
+    let cnt = 4;
+    function dialogs2(){
+        document.getElementById('intro').style.display = "block";
+        allText[count-1].style.display = 'none';
+        cnt++;
+        console.log(cnt);
+        allText[cnt-1].style.display = 'none';
+        allText[cnt].style.display = 'block';
+        if(cnt == 6){
+            document.querySelector('.inoplanet').style.display = 'none';
+            document.querySelector('.hero').style.display = 'block';
+        }else if(cnt == 7){
+            window.location.href = "ThirdPlanet.html";
+        }
+        else{
+            document.querySelector('.hero').style.display = 'none';
+            document.querySelector('.inoplanet').style.display = 'block';
+        } 
+    }
+    function Play(){
+        document.querySelector('.play').style.display = "none";
+        document.querySelector('.dialogs').style.display = "flex";
+    }
+    
+
+    let level1 = document.getElementById('level1');
+    let level2 = document.getElementById('level2');
+    let level3 = document.getElementById('level3');
+    let level4 = document.getElementById('level4');
+    let level5 = document.getElementById('level5');
+    let level6 = document.getElementById('level6');
+    let level7 = document.getElementById('level7');
+    let level8 = document.getElementById('level8');
+    let level9 = document.getElementById('level9');
+
+    let allPattern = document.querySelectorAll('.orange.pattern');
+
+    function clickNext(){
 
         if (level1.style.display == "flex"){
             level1.style.display = "none";
             level2.style.display = "flex";
-            
-        }
+        }       
         else if(level2.style.display == "flex"){
             level2.style.display = "none";
             level3.style.display = "flex";
-            document.querySelector(".linkBtn").style.display = "inline-block";
+        }
+        else if(level3.style.display == "flex"){
+            level3.style.display = "none";
+            level4.style.display = "flex";
+        }
+        else if(level4.style.display == "flex"){
+            level4.style.display = "none";
+            level5.style.display = "flex";
+        }
+        else if(level5.style.display == "flex"){
+            level5.style.display = "none";
+            level6.style.display = "flex";
+        }
+        else if(level6.style.display == "flex"){
+            level6.style.display = "none";
+            level7.style.display = "flex";
+        }
+        else if(level7.style.display == "flex"){
+            level7.style.display = "none";
+            level8.style.display = "flex";
+        }
+        else if(level8.style.display == "flex"){
+            level8.style.display = "none";
+            level9.style.display = "flex";
+        }
+        else if(level9.style.display == "flex"){
+            level9.style.display = "none";
+            level10.style.display = "flex";
+            document.getElementById("nextPlanet").style.display = "inline-block";
         }
     }
     function clickBack(){
@@ -157,23 +642,40 @@
         if (level2.style.display == "flex"){
             level2.style.display = "none";
             level1.style.display = "flex"
-            console.log('uuuf')
         }
         else if(level3.style.display == "flex"){
             level3.style.display = "none";
             level2.style.display = "flex";
-            console.log('uuuf2')
+        }
+        else if(level3.style.display == "flex"){
+            level3.style.display = "none";
+            level2.style.display = "flex";
+        }
+        else if(level4.style.display == "flex"){
+            level4.style.display = "none";
+            level3.style.display = "flex";
+        }
+        else if(level5.style.display == "flex"){
+            level5.style.display = "none";
+            level4.style.display = "flex";
+        }
+        else if(level6.style.display == "flex"){
+            level6.style.display = "none";
+            level5.style.display = "flex";
+        }
+        else if(level7.style.display == "flex"){
+            level7.style.display = "none";
+            level6.style.display = "flex";
+        }
+        else if(level8.style.display == "flex"){
+            level8.style.display = "none";
+            level7.style.display = "flex";
+        }
+        else if(level9.style.display == "flex"){
+            level9.style.display = "none";
+            level8.style.display = "flex";
+            document.getElementById('nextPlanet').style.display = "none";
         }
     }
-    (function() {  
-            let dialog = document.getElementById('intro');  
-            document.getElementById('hide').onclick = function() { dialog.close(); 
-            dialog.style.zIndex = 0;
-        }; 
-      })();
 </script>
-</html>
-</body>
-</html>
-</body>
 </html>
